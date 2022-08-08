@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset = "UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+	<header>
+		<div class="wrapper">
+			<div class="logo">
+				<img src="images/logo.png" alt ="">
+			</div>
+				<ul class="nav-area">
+					<li><a href="/productMainPage">Product Edit</a></li>
+					
+					<!-- Thymeleaf syntax for mapping  -->
+					<li><a th:href="@{/users}">View Users</a></li>
+					
+				</ul>
+			</div>
+			<div class="Welcome-text">
+			<h1>Welcome</h1>
+
+		</div>
+	</header>
+</body>
+</html>

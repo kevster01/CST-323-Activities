@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Delete Product</title>
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/boostrap.min.css" />
+
+</head>
+<body>
+
+<h2 style=" margin: auto;
+  width: 50%;padding: 10px;";>Delete a Product</h2>
+<!--  <form  th:action="@{/Delete]" method="post" th:object="${Product]">-->
+<form style=" margin: auto;
+  width: 50%;
+  border: 3px solid blue;
+  padding: 10px;";>
+<label>Choose Product to Remove</label><br>
+<!-- Will implement once database is ready -->
+<script>
+var cluster_id_property = document.getElementById('cluster_id_property').value;
+var area_id = document.getElementById('area_id').value;
+$.ajax({
+    'url'     : '<?= base_url('property/clusterByArea'); ?>',
+    'type'    : 'POST',
+    'dataType': 'JSON',
+    'data'    : {area_id : area_id},
+    success   : function(response) {
+        $('#cluster_id').find('option').not(':first').remove();
+        $.each(response,function(index,data){
+            $('#cluster_id').append('<option value="'+data['cluster_id_primary']+'">'+data['cluster_name']+'</option>');
+        });
+    }
+});
+</script>
+<select id="Product" name="products"></select><br><br>
+<button type="submit" class="btn btn-info col-2"> Remove Product</button>
+</form>
+
+</body>
+</html>

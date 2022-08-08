@@ -1,0 +1,25 @@
+*{
+	margin: 0; 
+	padding: 0;
+	outline: 0;
+}
+
+body{
+	background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("/images/background.jpg");
+	height: 100vh;
+	-webkit-background-size:cover;
+	background-size: cover;
+	background-position:center center;
+	position: relative; 
+}
+
+
+.userTable{
+	position: absolute;
+	top: 0; 
+	
+	float: center;
+	table: table-striped table-bordered;
+}
+
+

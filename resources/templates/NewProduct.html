@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add A Product</title>
+<link rel="stylesheet"
+	href="/css/style.css"
+	type="text/css" />
+</head>
+<body>
+	<div  class= "newProductForm" align="center">
+		<div>
+			<h1>Create New Product Form</h1>
+		</div>
+		
+			<form th:action="@{/process_ProductCreation}" method="post"
+			style="max-width:600px; margin: 0; 0 auto;"
+			th:object="${product}"
+			>
+			<div class="Signup-Form">
+					<div class="form=group row">
+						<label class="col-form-label col-4">SKU</label>
+						<div class = "col-8" >
+						<input type="text" class="form-control" th:field="*{Sku}" required />
+					</div>
+						
+					</div>
+					
+					
+					<div class="form=group row">
+						<label class="col-form-label col-4">Product name</label>
+						<div class = "col-8" >
+						<input type="text" class="form-control" th:field="*{productName}" required 
+						 maxlength="20"/>
+						</div>
+
+					</div>
+					
+					<div class="form=group row">
+						<label class="col-form-label col-4">Product description</label>
+						<div class = "col-8" >
+						<input type="text" class="form-control" th:field="*{productDescription}" required 
+						 maxlength="20"/>
+						</div>
+						
+					</div>
+					
+					<div class="form=group row">
+						<label class="col-form-label col-4">Product price</label>
+						<div class = "col-8" >
+						<input type="text" class="form-control" th:field="*{productPrice}" required
+						 maxlength="10"/>
+						</div>
+						
+					<div>
+						<button type="submit" th:href="@{/Welcome}" class ="btn btn-primary">Add</button> 
+						
+						</div>
+						
+					</div>
+			
+				</div>
+				
+				</form>
+	</div>
+
+
+</body>
+</html>
